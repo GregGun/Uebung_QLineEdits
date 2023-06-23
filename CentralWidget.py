@@ -1,6 +1,8 @@
 from PyQt6.QtCore import pyqtSlot, Qt
 from PyQt6.QtWidgets import QWidget, QGridLayout, QLabel, QLineEdit, QTextBrowser
 
+#Doku von Qt: https://doc.qt.io/qt-6/qlineedit.html#inputMask-prop
+#Github: https://github.com/chey00/lineedits/
 
 class CentralWidget(QWidget):
     def __init__(self, parent=None):
@@ -25,7 +27,6 @@ class CentralWidget(QWidget):
         self.grokleiLabel = QLabel("Eingabe von Groß- und Kleinbuchstaben, welcher in Großbuchstaben umgewandelt wird", self)
         self.grokleiLineEdit = QLineEdit(self)
         self.grokleiLineEdit.setInputMask(">A")
-
 
         self.text_browser = QTextBrowser()
 
@@ -58,4 +59,3 @@ class CentralWidget(QWidget):
     def text_finished(self):
         self.text_browser.append("\t(finished text")
         text = self.deziLineEdit.text()
-
